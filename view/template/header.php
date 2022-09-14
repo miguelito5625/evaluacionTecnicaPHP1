@@ -7,7 +7,10 @@
 	<title>Document</title>
 
 	<link rel="stylesheet" href="/view/template/css/main.css">
+	<link rel="stylesheet" href="/view/template/css/navbar.css">
 	<link rel="stylesheet" href="/view/template/css/cards.css">
+		<link rel="stylesheet" href="/view/template/css/forms.css">
+
 	<link rel="stylesheet" href="/view/template/css/buttons.css">
 
 </head>

@@ -1,4 +1,4 @@
-button {
+.buttonPrimary {
     padding: 1.3em 3em;
     font-size: 12px;
     text-transform: uppercase;
@@ -12,15 +12,16 @@ button {
     transition: all 0.3s ease 0s;
     cursor: pointer;
     outline: none;
+    text-decoration: none;
   }
   
-  button:hover {
+  .buttonPrimary:hover {
     background-color: #111;
     box-shadow: 0px 15px 20px rgba(58, 59, 58, 0.4);
     color: #fff;
     transform: translateY(-7px);
   }
   
-  button:active {
+  .buttonPrimary:active {
     transform: translateY(-1px);
   }

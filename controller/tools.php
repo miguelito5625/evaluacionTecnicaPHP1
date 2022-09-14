@@ -8,7 +8,7 @@ class toolsController{
 	public $module;
 
 	public function __construct() {
-		$this->view = 'list_tools';
+		$this->view = 'main_tools';
 		$this->module = 'tools';
 		$this->page_title = '';
 		$this->toolsObj = new Note();
@@ -16,8 +16,14 @@ class toolsController{
 
 	/* List all toolss */
 	public function list(){
-		$this->page_title = 'Listado de herramientas';
+		$this->page_title = 'Herramientas';
 		return $this->toolsObj->getNotes();
+	}
+
+	/* Load tools for edit */
+	public function registerToolsForm(){
+		$this->page_title = 'Registrar herrmienta';
+		$this->view = 'register_tools_form';
 	}
 
 	/* Load tools for edit */
