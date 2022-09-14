@@ -7,6 +7,8 @@
 	<title>Document</title>
 
 	<link rel="stylesheet" href="/view/template/css/main.css">
+	<link rel="stylesheet" href="/view/template/css/cards.css">
+	<link rel="stylesheet" href="/view/template/css/buttons.css">
 
 </head>
 <body>
