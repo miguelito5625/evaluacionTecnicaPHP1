@@ -16,6 +16,12 @@ class toolsController{
 
 	/* List all toolss */
 	public function list(){
+		$this->page_title = 'Lista de herrmientas';
+		return $this->toolsObj->getNotes();
+	}
+
+	/* List all toolss */
+	public function main(){
 		$this->page_title = 'Herramientas';
 		return $this->toolsObj->getNotes();
 	}

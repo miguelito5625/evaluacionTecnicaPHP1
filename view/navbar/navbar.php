@@ -7,7 +7,8 @@
 
 <ul class="navbar">
 <li class="navitem"><a href="/">Inicio</a></li>
-<li class="navitem"><a href="index.php?controller=tools&action=list">Herrmientas</a></li>
+<li class="navitem"><a href="index.php?controller=tools&action=main">Herrmientas</a></li>
+<li class="navitem"><a href="index.php?controller=mechanics&action=main">Mecanicos</a></li>
   <!-- <li class="navitem"><a href="#news">News</a></li>
   <li class="navitem dropdown">
     <a href="javascript:void(0)" class="dropbtn">Dropdown</a>
