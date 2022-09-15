@@ -1,12 +1,16 @@
-<div class="card" style="position: relative;">
+<div class="flex-container">
 
-<h4>Registrar Mecanicos</h4>
+    <div class="flex-item-left">
 
-<!-- <p>
+        <div class="card" style="position: relative;">
+
+            <h4>Registrar Mecanicos</h4>
+
+            <!-- <p>
     Modulo para registrar herramientas
 </p> -->
 
-<div style="
+            <div style="
 position: absolute;
 margin-left: auto;
 margin-right: auto;
@@ -16,7 +20,40 @@ text-align: center;
 bottom: 0;
 margin-bottom: 20px;
 ">
-<a class="buttonPrimary" href="index.php?controller=mechanics&action=registerMechanicsForm"> Ingresar </a>
-</div>
+                <a class="buttonPrimary" href="index.php?controller=mechanics&action=registerMechanicsForm"> Ingresar </a>
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <div class="flex-item-left">
+
+
+        <div class="card" style="position: relative;">
+
+            <h4>Listar Mecanicos</h4>
+
+            <!-- <p>
+    Modulo para registrar herramientas
+</p> -->
+
+            <div style="
+position: absolute;
+margin-left: auto;
+margin-right: auto;
+left: 0;
+right: 0;
+text-align: center;
+bottom: 0;
+margin-bottom: 20px;
+">
+                <a class="buttonPrimary" href="index.php?controller=mechanics&action=registerMechanicsForm"> Ingresar </a>
+            </div>
+
+        </div>
+
+    </div>
 
 </div>
