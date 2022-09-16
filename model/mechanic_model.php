@@ -23,7 +23,7 @@ class MechanicModel {
 		return $stmt->fetchAll();
 	}
 
-	public function getNoteById($id){
+	public function getMechanicById($id){
 		if(is_null($id)) return false;
 		$this->getConection();
 		$sql = "SELECT * FROM ".$this->table. " WHERE id = ?";
@@ -50,8 +50,7 @@ class MechanicModel {
 
 	}
 
-	/* Delete note by id */
-	public function deleteNoteById($id){
+	public function deleteMechanicById($id){
 		$this->getConection();
 		$sql = "DELETE FROM ".$this->table. " WHERE id = ?";
 		$stmt = $this->conection->prepare($sql);

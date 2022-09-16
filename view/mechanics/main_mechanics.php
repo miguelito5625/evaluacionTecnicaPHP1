@@ -1,6 +1,6 @@
 <div class="flex-container">
 
-    <div class="flex-item-left">
+    <div class="flex-item-main">
 
         <div class="card" style="position: relative;">
 
@@ -28,7 +28,7 @@ margin-bottom: 20px;
 
     </div>
 
-    <div class="flex-item-left">
+    <div class="flex-item-main">
 
 
         <div class="card" style="position: relative;">
@@ -49,7 +49,7 @@ text-align: center;
 bottom: 0;
 margin-bottom: 20px;
 ">
-                <a class="buttonPrimary" href="index.php?controller=mechanics&action=registerMechanicsForm"> Ingresar </a>
+                <a class="buttonPrimary" href="index.php?controller=mechanics&action=listPage"> Ingresar </a>
             </div>
 
         </div>

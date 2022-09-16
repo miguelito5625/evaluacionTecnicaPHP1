@@ -14,6 +14,13 @@ class mechanicsController{
 		$this->mechanicObj = new MechanicModel();
 	}
 
+	/* List all notes */
+	public function listPage(){
+		$this->page_title = 'Listado de mecanicos';
+		$this->view = 'list_mechanics';
+		return $this->mechanicObj->getMechanics();
+	}
+
 	public function main(){
 		$this->page_title = 'Control de Mecanicos';
 	}
