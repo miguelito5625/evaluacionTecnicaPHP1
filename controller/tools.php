@@ -24,7 +24,7 @@ class toolsController
 		$this->view = 'assign_tool_to_mechanic';
 		$obj = array(
 			"mechanics" => $this->mechanicObj->getMechanics(),
-			"tools" => $this->toolObj->getTools(),
+			"tools" => $this->toolObj->getFreeTools(),
 		);
 		return $obj;
 		// return $this->toolObj->getTools();

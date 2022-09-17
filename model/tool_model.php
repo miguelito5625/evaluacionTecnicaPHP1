@@ -26,6 +26,16 @@ class ToolModel
 		return $stmt->fetchAll();
 	}
 
+	public function getFreeTools()
+	{
+		$this->getConection();
+		$sql = "SELECT * FROM view_free_tools";
+		$stmt = $this->conection->prepare($sql);
+		$stmt->execute();
+
+		return $stmt->fetchAll();
+	}
+
 	public function getToolById($id)
 	{
 		if (is_null($id)) return false;

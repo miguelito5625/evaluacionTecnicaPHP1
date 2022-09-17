@@ -16,3 +16,7 @@ name varchar(255) NOT NULL,
 description varchar(255) NOT NULL,
 state varchar(20) DEFAULT "libre"
 );
+
+
+CREATE OR REPLACE VIEW view_free_tools AS
+SELECT * FROM tools WHERE state = 'libre';
