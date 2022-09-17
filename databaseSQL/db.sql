@@ -12,6 +12,7 @@ lastname varchar(255) NOT NULL
 
 CREATE TABLE IF NOT EXISTS `tools` (
 id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
-nametool varchar(255) NOT NULL,
-tooldescription varchar(255) NOT NULL
+name varchar(255) NOT NULL,
+description varchar(255) NOT NULL,
+state varchar(20) DEFAULT "libre"
 );

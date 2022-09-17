@@ -1,6 +1,7 @@
 <?php
 
 require_once 'model/tool_model.php';
+require_once 'model/mechanic_model.php';
 
 class toolsController
 {
@@ -14,6 +15,19 @@ class toolsController
 		$this->module = 'tools';
 		$this->page_title = '';
 		$this->toolObj = new ToolModel();
+		$this->mechanicObj = new MechanicModel();
+	}
+
+	public function assignTooltoMechanic()
+	{
+		$this->page_title = 'Asignar herramientas a mecanicos';
+		$this->view = 'assign_tool_to_mechanic';
+		$obj = array(
+			"mechanics" => $this->mechanicObj->getMechanics(),
+			"tools" => $this->toolObj->getTools(),
+		);
+		return $obj;
+		// return $this->toolObj->getTools();
 	}
 
 	public function listPage()

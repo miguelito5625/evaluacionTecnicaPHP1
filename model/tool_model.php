@@ -41,14 +41,14 @@ class ToolModel
 	{
 		$this->getConection();
 
-		$nametool = $descriptiontool = "";
+		$name = $description = "";
 
-		if (isset($param["nametool"])) $nametool = $param["nametool"];
-		if (isset($param["descriptiontool"])) $descriptiontool = $param["descriptiontool"];
+		if (isset($param["name"])) $name = $param["name"];
+		if (isset($param["description"])) $description = $param["description"];
 
-		$sql = "INSERT INTO " . $this->table . " (nametool, descriptiontool) values(?, ?)";
+		$sql = "INSERT INTO " . $this->table . " (name, description) values(?, ?)";
 		$stmt = $this->conection->prepare($sql);
-		$stmt->execute([$nametool, $descriptiontool]);
+		$stmt->execute([$name, $description]);
 		$id = $this->conection->lastInsertId();
 
 		return $id;

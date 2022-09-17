@@ -1,7 +1,7 @@
 <div style="margin-bottom: 30px">
 
 
-	<table id="example" class="display nowrap" style="width:100%;">
+	<table id="idTableMechanics" class="display nowrap" style="width:100%;">
 		<thead>
 			<tr>
 				<th>No.</th>
@@ -41,7 +41,7 @@
 	});
 
 	$(document).ready(function() {
-		var table = $('#example').DataTable({
+		var table = $('#idTableMechanics').DataTable({
 			language: {
 				"url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
 			},
@@ -52,13 +52,13 @@
 			}, ],
 		});
 
-		$('#example tbody').on('click', '#idAccion1', function() {
+		$('#idTableMechanics tbody').on('click', '#idAccion1', function() {
 			var data = table.row($(this).parents('tr')).data();
 			// alert(data[0] + "'s salary is: " + data[2]);
 			alert("Accion 1");
 		});
 
-		$('#example tbody').on('click', '#idAccion2', function() {
+		$('#idTableMechanics tbody').on('click', '#idAccion2', function() {
 			var data = table.row($(this).parents('tr')).data();
 			// alert(data[0] + "'s salary is: " + data[2]);
 			alert("Accion 2");
