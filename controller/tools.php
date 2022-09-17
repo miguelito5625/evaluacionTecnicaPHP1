@@ -1,70 +1,46 @@
-<?php 
+<?php
 
-require_once 'model/note.php';
+require_once 'model/tool_model.php';
 
-class toolsController{
+class toolsController
+{
 	public $page_title;
 	public $view;
 	public $module;
 
-	public function __construct() {
+	public function __construct()
+	{
 		$this->view = 'main_tools';
 		$this->module = 'tools';
 		$this->page_title = '';
-		$this->toolsObj = new Note();
+		$this->toolObj = new ToolModel();
 	}
 
-	/* List all toolss */
-	public function list(){
-		$this->page_title = 'Lista de herrmientas';
-		return $this->toolsObj->getNotes();
+	public function listPage()
+	{
+		$this->page_title = 'Listado de herramientas';
+		$this->view = 'list_tools';
+		return $this->toolObj->getTools();
 	}
 
-	/* List all toolss */
-	public function main(){
-		$this->page_title = 'Herramientas';
-		return $this->toolsObj->getNotes();
+	public function main()
+	{
+		$this->page_title = 'Control de Herramientas';
 	}
 
-	/* Load tools for edit */
-	public function registerToolsForm(){
-		$this->page_title = 'Registrar herrmienta';
+	public function registerToolsForm()
+	{
+		$this->page_title = 'Control de Herramientas';
 		$this->view = 'register_tools_form';
 	}
 
-	/* Load tools for edit */
-	public function edit($id = null){
-		$this->page_title = 'Editar nota';
-		$this->view = 'edit_tools';
-		/* Id can from get param or method param */
-		if(isset($_GET["id"])) $id = $_GET["id"];
-		return $this->toolsObj->getNoteById($id);
-	}
-
-	/* Create or update tools */
-	public function save(){
-		$this->view = 'edit_tools';
-		$this->page_title = 'Editar nota';
-		$id = $this->toolsObj->save($_POST);
-		$result = $this->toolsObj->getNoteById($id);
-		$_GET["response"] = true;
+	public function save()
+	{
+		$this->view = 'register_tools_form';
+		$this->page_title = 'Registrar Herramientass';
+		$id = $this->toolObj->save($_POST);
+		$result = $this->toolObj->getToolById($id);
+		$_GET["savedTool"] = true;
 		return $result;
 	}
-
-	/* Confirm to delete */
-	public function confirmDelete(){
-		$this->page_title = 'Eliminar nota';
-		$this->view = 'confirm_delete_tools';
-		return $this->toolsObj->getNoteById($_GET["id"]);
-	}
-
-	/* Delete */
-	public function delete(){
-		$this->page_title = 'Listado de notas';
-		$this->view = 'delete_tools';
-		return $this->toolsObj->deleteNoteById($_POST["id"]);
-	}
-
 }
-
-?>

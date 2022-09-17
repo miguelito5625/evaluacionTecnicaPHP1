@@ -1,9 +1,7 @@
-
 <?php
 if (isset($_GET["savedMechanic"])) {
 ?>
     <script>
-        console.log("Mecanico registrado");
         window.location.href = "index.php?controller=mechanics&action=main&successSavedMechanic=true";
     </script>
 <?php
