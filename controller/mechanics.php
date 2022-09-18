@@ -39,7 +39,7 @@ class mechanicsController
 		$this->view = 'register_mechanics_form';
 		$this->page_title = 'Registrar Mecanico';
 		$id = $this->mechanicObj->save($_POST);
-		$result = $this->mechanicObj->getNoteById($id);
+		$result = $this->mechanicObj->getMechanicById($id);
 		$_GET["savedMechanic"] = true;
 		return $result;
 	}
