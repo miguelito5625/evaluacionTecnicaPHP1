@@ -20,3 +20,27 @@ if (isset($_GET["successSavedTool"])) {
 <?php
 }
 ?>
+
+
+<?php
+if (isset($_GET["assignedTooltoMechanic"])) {
+?>
+    <script>
+        window.location.href = "index.php?controller=tools&action=main&successAssignedTooltoMechanic=true";
+    </script>
+<?php
+}
+?>
+
+<?php
+if (isset($_GET["successAssignedTooltoMechanic"])) {
+?>
+    <script>
+        console.log("Herramienta asignada correctamente");
+        iziToast.success({
+            title: 'Herramienta asignada correctamente',
+        });
+    </script>
+<?php
+}
+?>

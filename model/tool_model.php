@@ -64,6 +64,27 @@ class ToolModel
 		return $id;
 	}
 
+	public function saveMechanicTools($param)
+	{
+		$this->getConection();
+
+		$mechanic_id = $tool_id = "";
+
+		if (isset($param["mechanic_id"])) $mechanic_id = $param["mechanic_id"];
+		if (isset($param["tool_id"])) $tool_id = $param["tool_id"];
+
+		$sql = "UPDATE tools SET state='ocupada' WHERE id=?";
+		$stmt = $this->conection->prepare($sql);
+		$stmt->execute([$tool_id]);
+
+		$sql = "INSERT INTO mechanics_tools (mechanic_id, tool_id) values(?, ?)";
+		$stmt = $this->conection->prepare($sql);
+		$stmt->execute([$mechanic_id, $tool_id]);
+		$id = $this->conection->lastInsertId();
+
+		return $id;
+	}
+
 	public function deleteToolById($id)
 	{
 		$this->getConection();

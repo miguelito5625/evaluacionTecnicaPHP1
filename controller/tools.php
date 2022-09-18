@@ -57,4 +57,14 @@ class toolsController
 		$_GET["savedTool"] = true;
 		return $result;
 	}
+
+	public function saveMechanicTools()
+	{
+		$this->view = 'assign_tool_to_mechanic';
+		$this->page_title = 'Asignar herramientas a mecanicos';
+		$id = $this->toolObj->saveMechanicTools($_POST);
+		$result = $this->toolObj->getToolById($id);
+		$_GET["assignedTooltoMechanic"] = true;
+		return $result;
+	}
 }

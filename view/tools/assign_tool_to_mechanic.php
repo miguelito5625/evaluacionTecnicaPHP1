@@ -3,13 +3,13 @@
     <h3>Asignar herramienta a mecanico</h3>
 
 
-    <form action="index.php?controller=tools&action=save" method="POST">
+    <form action="index.php?controller=tools&action=saveMechanicTools" method="POST">
         <div class="row">
             <div class="col-25">
-                <label for="name">Mecánico</label>
+                <label for="mechanic_id">Mecánico</label>
             </div>
             <div class="col-75">
-                <select id="idSelectMecanich" name="idMechanic" class="selectInput">
+                <select id="idSelectMecanich" name="mechanic_id" class="selectInput">
                     <?php
                     if (count($dataToView["data"]["mechanics"]) > 0) {
                         foreach ($dataToView["data"]["mechanics"] as $mechanic) {
@@ -28,10 +28,10 @@
 
         <div class="row">
             <div class="col-25">
-                <label for="description">Herramienta</label>
+                <label for="tool_id">Herramienta</label>
             </div>
             <div class="col-75">
-                <select id="idSelectTool" name="idTool" class="selectInput">
+                <select id="idSelectTool" name="tool_id" class="selectInput">
                     <?php
                     if (count($dataToView["data"]["tools"]) > 0) {
                         foreach ($dataToView["data"]["tools"] as $tool) {
