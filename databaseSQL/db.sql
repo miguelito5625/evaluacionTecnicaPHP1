@@ -6,14 +6,14 @@ USE `talleresguatemala`;
 
 CREATE TABLE IF NOT EXISTS `mechanics` (
 id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
-firstname varchar(255) NOT NULL,
-lastname varchar(255) NOT NULL
+firstname varchar(100) NOT NULL,
+lastname varchar(100) NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS `tools` (
 id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
-name varchar(255) NOT NULL,
-description varchar(255) NOT NULL,
+name varchar(50) NOT NULL,
+description varchar(100) NOT NULL,
 state varchar(20) DEFAULT "libre"
 );
 
