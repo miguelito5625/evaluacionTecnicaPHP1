@@ -27,3 +27,12 @@ CONSTRAINT FK_tool_mechanics_tools FOREIGN KEY (tool_id) REFERENCES `tools` (id)
 
 CREATE OR REPLACE VIEW view_free_tools AS
 SELECT * FROM tools WHERE state = 'libre';
+
+CREATE OR REPLACE VIEW view_mechanics_tools AS
+SELECT 
+mechanics_tools.id, tools.id as tool_id, tools.name AS tool_name, mechanics.id AS mechanic_id, 
+mechanics.firstname AS mechanic_firstname, mechanics.lastname AS mechanic_lastname
+FROM ((mechanics_tools
+INNER JOIN mechanics ON mechanics_tools.mechanic_id = mechanics.id)
+INNER JOIN tools ON mechanics_tools.tool_id = tools.id);
+

@@ -67,4 +67,13 @@ class toolsController
 		$_GET["assignedTooltoMechanic"] = true;
 		return $result;
 	}
+
+
+	public function showMechanicHaveTool()
+	{
+		$this->page_title = 'Que mecanico tiene la herramienta';
+		$this->view = 'show_mechanic_have_tool';
+		$toolid = $_GET['toolid'];
+		return $this->toolObj->getMechanicHaveToolByToolId($toolid);
+	}
 }

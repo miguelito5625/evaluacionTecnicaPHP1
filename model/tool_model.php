@@ -85,6 +85,17 @@ class ToolModel
 		return $id;
 	}
 
+	public function getMechanicHaveToolByToolId($id)
+	{
+		if (is_null($id)) return false;
+		$this->getConection();
+		$sql = "SELECT * FROM view_mechanics_tools WHERE tool_id = ?";
+		$stmt = $this->conection->prepare($sql);
+		$stmt->execute([$id]);
+
+		return $stmt->fetch();
+	}
+
 	public function deleteToolById($id)
 	{
 		$this->getConection();
