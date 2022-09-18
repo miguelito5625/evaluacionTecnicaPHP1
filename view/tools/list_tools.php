@@ -50,7 +50,7 @@
             columnDefs: [{
                 targets: -1,
                 data: null,
-                defaultContent: '<button id="idAccion1">Click!</button> <button id="idAccion2">Click!</button>',
+                defaultContent: '<button id="idAccion1">Quien la tiene?</button> ',
             }, ],
         });
 
@@ -60,11 +60,11 @@
             window.location.href = "index.php?controller=tools&action=showMechanicHaveTool&toolid=" + data[0];
         });
 
-        $('#idTableTools tbody').on('click', '#idAccion2', function() {
-            var data = table.row($(this).parents('tr')).data();
-            // alert(data[0] + "'s salary is: " + data[2]);
-            alert("Accion 2");
-        });
+        // $('#idTableTools tbody').on('click', '#idAccion2', function() {
+        //     var data = table.row($(this).parents('tr')).data();
+        //     // alert(data[0] + "'s salary is: " + data[2]);
+        //     alert("Accion 2");
+        // });
 
     });
 </script>
