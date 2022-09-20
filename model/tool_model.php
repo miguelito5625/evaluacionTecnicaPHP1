@@ -103,4 +103,22 @@ class ToolModel
 		$stmt = $this->conection->prepare($sql);
 		return $stmt->execute([$id]);
 	}
+
+	public function updateTool($param)
+	{
+		$this->getConection();
+
+		$id = $name = $description = "";
+
+		if (isset($param["id"])) $id = $param["id"];
+		if (isset($param["name"])) $name = $param["name"];
+		if (isset($param["description"])) $description = $param["description"];
+
+		$sql = "UPDATE " . $this->table . " SET name = ?, description = ? WHERE id = $id";
+		$stmt = $this->conection->prepare($sql);
+		$stmt->execute([$name, $description]);
+		$id = $this->conection->lastInsertId();
+
+		return $id;
+	}
 }

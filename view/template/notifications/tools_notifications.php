@@ -44,3 +44,27 @@ if (isset($_GET["successAssignedTooltoMechanic"])) {
 <?php
 }
 ?>
+
+
+<?php
+if (isset($_GET["updatedTool"])) {
+?>
+    <script>
+        window.location.href = "index.php?controller=tools&action=main&successUpdatedTool=true";
+    </script>
+<?php
+}
+?>
+
+<?php
+if (isset($_GET["successUpdatedTool"])) {
+?>
+    <script>
+        console.log("Herramienta modificada");
+        iziToast.success({
+            title: 'Herramienta modificada correctamente',
+        });
+    </script>
+<?php
+}
+?>

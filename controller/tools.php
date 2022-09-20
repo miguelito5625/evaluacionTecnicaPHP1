@@ -51,7 +51,7 @@ class toolsController
 	public function save()
 	{
 		$this->view = 'register_tools_form';
-		$this->page_title = 'Registrar Herramientass';
+		$this->page_title = 'Registrar Herramienta';
 		$id = $this->toolObj->save($_POST);
 		$result = $this->toolObj->getToolById($id);
 		$_GET["savedTool"] = true;
@@ -75,5 +75,23 @@ class toolsController
 		$this->view = 'show_mechanic_have_tool';
 		$toolid = $_GET['toolid'];
 		return $this->toolObj->getMechanicHaveToolByToolId($toolid);
+	}
+
+	public function pageEditTool()
+	{
+		$this->page_title = 'Editar herramienta';
+		$this->view = 'edit_tool';
+		$toolid = $_GET['toolid'];
+		return $this->toolObj->getToolById($toolid);
+	}
+
+	public function updateTool()
+	{
+		$this->view = 'edit_tool';
+		$this->page_title = 'Editar Herramienta';
+		$id = $this->toolObj->updateTool($_POST);
+		$result = $this->toolObj->getToolById($id);
+		$_GET["updatedTool"] = true;
+		return $result;
 	}
 }
