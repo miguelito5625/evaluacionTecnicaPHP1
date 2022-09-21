@@ -94,4 +94,21 @@ class toolsController
 		$_GET["updatedTool"] = true;
 		return $result;
 	}
+
+	public function pageRegisterTypeToolsForm()
+	{
+		$this->page_title = 'Control de Herramientas';
+		$this->view = 'register_type_tools_form';
+	}
+
+	public function saveTypeTool()
+	{
+		$this->view = 'register_type_tools_form';
+		$this->page_title = 'Registrar Tipo de Herramienta';
+		$id = $this->toolObj->saveTypeTool($_POST);
+		$result = "Typo de herramienta registrada";
+		$_GET["savedTypeTool"] = true;
+		return $result;
+	}
+
 }

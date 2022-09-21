@@ -64,6 +64,22 @@ class ToolModel
 		return $id;
 	}
 
+	public function saveTypeTool($param)
+	{
+		$this->getConection();
+
+		$name = "";
+
+		if (isset($param["name"])) $name = $param["name"];
+
+		$sql = "INSERT INTO type_tools (name) values(?)";
+		$stmt = $this->conection->prepare($sql);
+		$stmt->execute([$name]);
+		$id = $this->conection->lastInsertId();
+
+		return $id;
+	}
+
 	public function saveMechanicTools($param)
 	{
 		$this->getConection();

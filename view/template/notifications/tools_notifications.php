@@ -21,6 +21,29 @@ if (isset($_GET["successSavedTool"])) {
 }
 ?>
 
+<?php
+if (isset($_GET["savedTypeTool"])) {
+?>
+    <script>
+        window.location.href = "index.php?controller=tools&action=main&successSavedTypeTool=true";
+    </script>
+<?php
+}
+?>
+
+<?php
+if (isset($_GET["successSavedTypeTool"])) {
+?>
+    <script>
+        console.log("Tipo de herramienta registrada");
+        iziToast.success({
+            title: 'Tipo de herramienta registrada correctamente',
+        });
+    </script>
+<?php
+}
+?>
+
 
 <?php
 if (isset($_GET["assignedTooltoMechanic"])) {
