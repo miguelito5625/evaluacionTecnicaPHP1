@@ -19,7 +19,7 @@ class ToolModel
 	public function getTools()
 	{
 		$this->getConection();
-		$sql = "SELECT * FROM " . $this->table;
+		$sql = "SELECT * FROM view_tools";
 		$stmt = $this->conection->prepare($sql);
 		$stmt->execute();
 

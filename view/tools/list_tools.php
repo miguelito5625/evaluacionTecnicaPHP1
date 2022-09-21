@@ -4,7 +4,8 @@
     <table id="idTableTools" class="display nowrap" style="width:100%;">
         <thead>
             <tr>
-                <th>No.</th>
+            <th>id</th>
+            <th>No.</th>
                 <th>Nombre</th>
                 <th>Descripción</th>
                 <th>Estado</th>
@@ -19,7 +20,8 @@
             ?>
 
                     <tr>
-                        <td><?php echo $mechanic['id']; ?></td>
+                    <td><?php echo $mechanic['id']; ?></td>
+                    <td><?php echo $mechanic['rowNumber']; ?></td>
                         <td><?php echo $mechanic['name']; ?></td>
                         <td><?php echo $mechanic['description']; ?></td>
                         <td><?php echo $mechanic['state']; ?></td>
@@ -47,11 +49,18 @@
             language: {
                 "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
             },
-            columnDefs: [{
+            columnDefs: [
+                {
                 targets: -1,
                 data: null,
                 defaultContent: '<button id="idAccion1">Quien la tiene?</button> <button id="idAccion2">Editar</button> ',
-            }, ],
+            }, 
+            {
+                target: 0,
+                visible: false,
+                searchable: false,
+            },
+        ],
         });
 
         $('#idTableTools tbody').on('click', '#idAccion1', function() {
