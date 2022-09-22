@@ -37,6 +37,13 @@ class toolsController
 		return $this->toolObj->getTools();
 	}
 
+	public function listTypeToolsPage()
+	{
+		$this->page_title = 'Listado de tipos de herramientas';
+		$this->view = 'list_type_tools';
+		return $this->toolObj->getTypeTools();
+	}
+
 	public function main()
 	{
 		$this->page_title = 'Control de Herramientas';

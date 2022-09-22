@@ -26,6 +26,16 @@ class ToolModel
 		return $stmt->fetchAll();
 	}
 
+	public function getTypeTools()
+	{
+		$this->getConection();
+		$sql = "SELECT ROW_NUMBER() OVER (ORDER BY id) as rowNumber, id, name, existence FROM type_tools";
+		$stmt = $this->conection->prepare($sql);
+		$stmt->execute();
+
+		return $stmt->fetchAll();
+	}
+
 	public function getFreeTools()
 	{
 		$this->getConection();
